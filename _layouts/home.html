@@ -1,44 +1,28 @@
 ---
 layout: default
 ---
-<section class="wrap blog-head">
-  <h1>博客</h1>
-  <p>AnBoWork 的使用教程、办公自动化思路与产品更新。</p>
-</section>
+<div class="list-head">
+  <h1 id="list-title">全部文章</h1>
+  <p><span id="count">{{ site.posts.size }}</span> 篇 · AnBoWork 的使用教程、功能介绍与产品更新</p>
+</div>
 
-<section class="wrap blog-list" aria-label="文章列表">
-  {% assign posts = site.posts %}
-  {% if posts.size > 0 %}
-  {% assign first = posts.first %}
-  <article class="feature">
-    <a class="feature__media" href="{{ first.url | relative_url }}" tabindex="-1" aria-hidden="true">
-      {% if first.image %}<img src="{{ first.image | relative_url }}" alt="" width="1200" height="630">{% else %}<span class="ph">{{ first.categories | first }}</span>{% endif %}
+{% if site.posts.size > 0 %}
+<div class="rows">
+  {% for post in site.posts %}
+  <article class="row" data-cat="{{ post.categories | join: '|' }}">
+    <a class="row__media" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      {% if post.image %}<img src="{{ post.image | relative_url }}" alt="" width="1200" height="630"{% unless forloop.first %} loading="lazy"{% endunless %}>{% else %}<span class="ph">{{ post.categories | first }}</span>{% endif %}
     </a>
-    <div class="feature__body">
-      <p class="meta"><span class="meta__cat">{{ first.categories | first }}</span><time datetime="{{ first.date | date_to_xmlschema }}">{{ first.date | date: '%Y-%m-%d' }}</time></p>
-      <h2><a href="{{ first.url | relative_url }}">{{ first.title }}</a></h2>
-      <p class="feature__excerpt">{{ first.excerpt | strip_html | strip_newlines | truncate: 110 }}</p>
-      <a class="more" href="{{ first.url | relative_url }}">阅读全文</a>
+    <div class="row__body">
+      <p class="meta"><span class="meta__cat">{{ post.categories | first }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time></p>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p class="row__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 90 }}</p>
     </div>
   </article>
-
-  {% if posts.size > 1 %}
-  <ul class="grid">
-    {% for post in posts offset:1 %}
-    <li class="card">
-      <a class="card__media" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
-        {% if post.image %}<img src="{{ post.image | relative_url }}" alt="" width="1200" height="630" loading="lazy">{% else %}<span class="ph">{{ post.categories | first }}</span>{% endif %}
-      </a>
-      <p class="meta"><span class="meta__cat">{{ post.categories | first }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time></p>
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p class="card__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 80 }}</p>
-    </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-  {% else %}
-  <div class="empty">
-    <p>文章正在准备中。你可以先访问 <a href="https://www.anbowork.com">官网</a> 了解 AnBoWork。</p>
-  </div>
-  {% endif %}
-</section>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty">
+  <p>文章正在准备中。你可以先访问 <a href="https://www.anbowork.com">官网</a> 了解 AnBoWork。</p>
+</div>
+{% endif %}

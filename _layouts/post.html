@@ -2,32 +2,37 @@
 layout: default
 ---
 {% assign minutes = content | strip_html | size | divided_by: 400 | plus: 1 %}
-<article class="wrap article">
-  <nav class="crumbs" aria-label="面包屑">
-    <a href="{{ '/' | relative_url }}">文章</a>
-    {% if page.categories.size > 0 %}<span aria-hidden="true">/</span><span>{{ page.categories | first }}</span>{% endif %}
-  </nav>
-  <header class="article__head">
-    <h1>{{ page.title }}</h1>
-    <p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time><span class="meta__cat">约 {{ minutes }} 分钟阅读</span></p>
-  </header>
-  {% if page.image %}<img class="article__cover" src="{{ page.image | relative_url }}" alt="" width="1200" height="630">{% endif %}
-  <div class="prose">
-    {{ content }}
-  </div>
+<div class="doc">
+  <article class="doc__main">
+    <header class="doc__head">
+      <p class="meta"><span class="meta__cat">{{ page.categories | first }}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time><span>约 {{ minutes }} 分钟阅读</span></p>
+      <h1>{{ page.title }}</h1>
+    </header>
+    {% if page.image %}<img class="doc__cover" src="{{ page.image | relative_url }}" alt="" width="1200" height="630">{% endif %}
+    <div class="prose">
+      {{ content }}
+    </div>
 
-  {% if page.tags.size > 0 %}
-  <p class="tags">{% for t in page.tags %}<span>{{ t }}</span>{% endfor %}</p>
-  {% endif %}
+    {% if page.tags.size > 0 %}
+    <p class="tags">{% for t in page.tags %}<span>{{ t }}</span>{% endfor %}</p>
+    {% endif %}
 
-  <aside class="cta">
-    <h2>开始使用 AnBoWork</h2>
-    <p>下载桌面工作台，用自然语言安排你的任务。</p>
-    <a class="btn btn--primary" href="https://www.anbowork.com/download">下载 AnBoWork</a>
+    <aside class="cta">
+      <div>
+        <h2>开始使用 AnBoWork</h2>
+        <p>下载桌面工作台，用你自己的官方账号登录即可使用。</p>
+      </div>
+      <a class="btn btn--primary" href="https://www.anbowork.com/download">下载 AnBoWork</a>
+    </aside>
+
+    <nav class="pager" aria-label="上一篇和下一篇">
+      {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>上一篇</small>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+      {% if page.next %}<a class="pager__next" href="{{ page.next.url | relative_url }}"><small>下一篇</small>{{ page.next.title }}</a>{% endif %}
+    </nav>
+  </article>
+
+  <aside class="doc__toc" id="toc" aria-label="本文目录">
+    <p class="side__label">本文目录</p>
+    <ol></ol>
   </aside>
-
-  <nav class="pager" aria-label="上一篇和下一篇">
-    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>上一篇</small>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
-    {% if page.next %}<a class="pager__next" href="{{ page.next.url | relative_url }}"><small>下一篇</small>{{ page.next.title }}</a>{% endif %}
-  </nav>
-</article>
+</div>

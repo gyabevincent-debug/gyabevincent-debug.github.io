@@ -12,35 +12,81 @@
 </head>
 <body>
   <a class="skip" href="#main">跳到正文</a>
-  <header class="site-header">
-    <div class="wrap site-header__row">
-      <a class="brand" href="{{ '/' | relative_url }}">
-        <img src="{{ '/assets/images/favicon.png' | relative_url }}" width="28" height="28" alt="">
-        <span>AnBoWork</span><span class="brand__sub">博客</span>
+  {% assign all_cats = site.posts | map: "categories" | join: "," | split: "," | uniq %}
+  <div class="shell">
+    <aside class="side">
+      <a class="side__brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/images/favicon.png' | relative_url }}" width="32" height="32" alt="">
+        <span><strong>AnBoWork</strong><small>官方博客</small></span>
       </a>
-      <nav class="nav" aria-label="主导航">
+
+      <nav class="side__nav" aria-label="主导航">
         {% for item in site.data.navigation %}
-        <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        <a href="{{ item.url | relative_url }}"{% if page.url == item.url or page.layout == 'post' and item.url == '/' %} aria-current="page"{% endif %}>{{ item.title }}</a>
         {% endfor %}
       </nav>
-      <a class="btn btn--primary btn--sm" href="https://www.anbowork.com/download">下载 AnBoWork</a>
-    </div>
-  </header>
 
-  <main id="main">
-    {{ content }}
-  </main>
+      {% if all_cats.size > 0 %}
+      <div class="side__group">
+        <p class="side__label">分类</p>
+        <nav class="cats" aria-label="文章分类">
+          <a href="{{ '/' | relative_url }}" data-c="">全部<span>{{ site.posts.size }}</span></a>
+          {% for cat in all_cats %}
+          {% assign n = site.posts | where_exp: "p", "p.categories contains cat" | size %}
+          <a href="{{ '/' | relative_url }}?c={{ cat | uri_escape }}" data-c="{{ cat }}">{{ cat }}<span>{{ n }}</span></a>
+          {% endfor %}
+        </nav>
+      </div>
+      {% endif %}
 
-  <footer class="site-footer">
-    <div class="wrap site-footer__row">
-      <p>&copy; {{ site.time | date: '%Y' }} AnBoWork. 保留所有权利。</p>
-      <nav aria-label="页脚导航">
-        <a href="https://www.anbowork.com">官网</a>
-        <a href="https://www.anbowork.com/download">下载</a>
-        <a href="https://github.com/gyabevincent-debug/anbowork">GitHub</a>
-        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
-      </nav>
-    </div>
-  </footer>
+      <div class="side__foot">
+        <a class="btn btn--primary" href="https://www.anbowork.com/download">下载 AnBoWork</a>
+        <p>
+          <a href="https://www.anbowork.com">官网</a>
+          <a href="https://github.com/gyabevincent-debug/anbowork">GitHub</a>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </p>
+        <small>&copy; {{ site.time | date: '%Y' }} AnBoWork</small>
+      </div>
+    </aside>
+
+    <main id="main" class="main">
+      {{ content }}
+    </main>
+  </div>
+
+  <script>
+  (function () {
+    var c = new URLSearchParams(location.search).get('c') || '';
+    var rows = document.querySelectorAll('[data-cat]');
+    rows.forEach(function (r) { r.hidden = !!c && r.dataset.cat.split('|').indexOf(c) < 0; });
+    document.querySelectorAll('.cats a').forEach(function (a) { if ((a.dataset.c || '') === c) a.setAttribute('aria-current', 'true'); });
+    var count = document.getElementById('count');
+    if (count) count.textContent = document.querySelectorAll('[data-cat]:not([hidden])').length;
+    var title = document.getElementById('list-title');
+    if (title && c) title.textContent = c;
+
+    var prose = document.querySelector('.prose'), toc = document.getElementById('toc');
+    if (!prose || !toc) return;
+    var hs = prose.querySelectorAll('h2[id]');
+    if (hs.length < 2) { toc.hidden = true; return; }
+    var list = toc.querySelector('ol');
+    hs.forEach(function (h) {
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent; li.appendChild(a); list.appendChild(li);
+    });
+    if ('IntersectionObserver' in window) {
+      var links = list.querySelectorAll('a');
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (l) { l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id); });
+          }
+        });
+      }, { rootMargin: '0px 0px -70% 0px' });
+      hs.forEach(function (h) { io.observe(h); });
+    }
+  })();
+  </script>
 </body>
 </html>
