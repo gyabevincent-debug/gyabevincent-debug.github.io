@@ -60,7 +60,7 @@
     var c = new URLSearchParams(location.search).get('c') || '';
     var rows = document.querySelectorAll('[data-cat]');
     rows.forEach(function (r) { r.hidden = !!c && r.dataset.cat.split('|').indexOf(c) < 0; });
-    document.querySelectorAll('.cats a').forEach(function (a) { if ((a.dataset.c || '') === c) a.setAttribute('aria-current', 'true'); });
+    if (document.getElementById('list-title')) document.querySelectorAll('.cats a').forEach(function (a) { if ((a.dataset.c || '') === c) a.setAttribute('aria-current', 'true'); });
     var count = document.getElementById('count');
     if (count) count.textContent = document.querySelectorAll('[data-cat]:not([hidden])').length;
     var title = document.getElementById('list-title');
