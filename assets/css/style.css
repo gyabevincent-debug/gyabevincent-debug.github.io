@@ -56,16 +56,18 @@ a:hover { text-decoration-thickness: 2px; }
 .btn--sm { padding: 7px 14px; font-size: 14px; }
 
 /* 首页首屏 */
-.hero { padding: 72px 0 40px; background: radial-gradient(900px 320px at 85% -10%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%); }
-.hero__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+.hero { position: relative; overflow: hidden; padding: 64px 0 56px; background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 7%, transparent), transparent); }
+.hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent); pointer-events: none; }
+.hero::before { width: 520px; height: 520px; right: -120px; top: -180px; }
+.hero::after { width: 340px; height: 340px; right: -30px; top: -90px; }
+.hero__grid { position: relative; z-index: 1; }
 .hero h1 { text-wrap: balance; font-size: clamp(30px, 4vw, 46px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 16px; }
 .hero__lead { font-size: 18px; color: var(--text-2); max-width: 34em; margin: 0 0 28px; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero__mark { justify-self: end; padding: 36px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 
 /* 文章列表 */
-.section { padding-top: 32px; padding-bottom: 72px; }
-.section__title { font-size: 20px; margin: 0 0 20px; letter-spacing: -0.01em; }
+.section { padding-top: 48px; padding-bottom: 80px; }
+.section__title { font-size: 22px; margin: 0 0 24px; letter-spacing: -0.01em; }
 .meta { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 8px; font-size: 13px; color: var(--text-2); }
 .meta__cat { color: var(--accent); font-weight: 600; }
 .feature { margin-bottom: 20px; }
@@ -129,9 +131,7 @@ a:hover { text-decoration-thickness: 2px; }
   .site-header__row { gap: 12px; }
   .brand__sub, .nav a:nth-child(2) { display: none; }
   .nav { gap: 0; }
-  .hero { padding: 40px 0 24px; }
-  .hero__grid { grid-template-columns: 1fr; }
-  .hero__mark { display: none; }
+  .hero { padding: 40px 0 32px; }
   .feature__link:has(.feature__img) { grid-template-columns: 1fr; }
   .feature__body { padding: 22px; }
   .grid { grid-template-columns: 1fr; }
