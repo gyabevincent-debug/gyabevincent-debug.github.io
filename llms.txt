@@ -1,4 +1,4 @@
-# llms.txt — AI 爬虫声明
+# llms.txt - AI 爬虫声明
 # 标准参考：https://llmstxt.org
 
 > AnBoWork 工作台博客 (gyabevincent-debug.github.io)

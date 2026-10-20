@@ -23,7 +23,6 @@ exclude:
   - vendor
   - README.md
   - CLAUDE.md
-  - CLAUDE.md
 
 defaults:
   - scope:
