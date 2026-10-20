@@ -1,0 +1,38 @@
+title: "AnBoWork 工作台博客"
+description: >-
+  AnBoWork 工作台官方博客：AI Agent 桌面工作台的使用教程、办公自动化技巧与功能更新，
+  帮你用自然语言完成对话、写作、资料整理与日常办公。
+url: "https://gyabevincent-debug.github.io"
+baseurl: ""
+lang: zh-CN
+
+author:
+  name: "AnBoWork"
+
+timezone: Asia/Shanghai
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - CLAUDE.md
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      lang: zh
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
