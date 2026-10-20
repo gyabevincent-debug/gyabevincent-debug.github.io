@@ -1,128 +1,55 @@
 ---
 layout: default
 ---
-
-{% assign lang = page.lang | default: 'zh' %}
-{% case lang %}
-  {% when 'en' %}
-    {% assign h_badge = 'AI Workbench · Guides' %}
-    {% assign h_title = 'AnBoWork Workbench Blog' %}
-    {% assign h_sub   = 'AI Agent · Office Automation · Productivity Tips' %}
-    {% assign h_note  = 'Continuously Updated · Practical Tutorials' %}
-  {% else %}
-    {% assign h_badge = 'AI 工作台 · 使用指南' %}
-    {% assign h_title = 'AnBoWork 工作台博客' %}
-    {% assign h_sub   = 'AI Agent · 办公自动化 · 效率技巧' %}
-    {% assign h_note  = '持续更新 · 实用教程' %}
-{% endcase %}
-
-{% case lang %}
-  {% when 'en' %}
-    {% assign label_featured = 'Featured' %}
-    {% assign label_min_read = 'min read' %}
-    {% assign label_stats1   = 'Continuously updated' %}
-    {% assign label_stats2   = 'Chinese & English' %}
-    {% assign label_stats3   = 'Practical tutorials' %}
-    {% assign cat1 = '🧭 Guides' %}
-    {% assign cat2 = '🤖 AI Tools' %}
-    {% assign cat3 = '📺 Streaming' %}
-    {% assign cat4 = '🌏 Digital Life' %}
-  {% else %}
-    {% assign label_featured = '精选' %}
-    {% assign label_min_read = '分钟' %}
-    {% assign label_stats1   = '持续更新' %}
-    {% assign label_stats2   = '中英双语' %}
-    {% assign label_stats3   = '实用教程' %}
-    {% assign cat1 = '🧭 使用指南' %}
-    {% assign cat2 = '🤖 AI工具' %}
-    {% assign cat3 = '📺 流媒体' %}
-    {% assign cat4 = '🌏 数字生活' %}
-{% endcase %}
-
 <section class="hero">
-  <img class="hero__bg" src="{{ '/assets/images/hero-bg.webp' | relative_url }}" alt="" width="1600" height="400">
-  <div class="hero__scrim"></div>
-  <div class="hero__content">
-    <span class="hero__badge"><span class="hero__dot"></span>{{ h_badge }}</span>
-    <h1 class="hero__title">{{ h_title }}</h1>
-    <p class="hero__sub">{{ h_sub }}</p>
-    <span class="hero__note"><span class="hero__note-dot"></span>{{ h_note }}</span>
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <h1>AnBoWork 工作台官方博客</h1>
+      <p class="hero__lead">AI Agent 桌面工作台的使用教程、办公自动化思路与产品更新。</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="https://www.anbowork.com/download">下载 AnBoWork</a>
+        <a class="btn btn--ghost" href="https://www.anbowork.com">访问官网</a>
+      </div>
+    </div>
+    <div class="hero__mark" aria-hidden="true">
+      <img src="{{ '/assets/images/logo.svg' | relative_url }}" width="160" height="160" alt="">
+    </div>
   </div>
 </section>
 
-<div class="lead">{{ content }}</div>
-
-<div class="stats-bar">
-  <span>✍️ {{ label_stats1 }}</span>
-  <span>🌐 {{ label_stats2 }}</span>
-  <span>🔄 {{ label_stats3 }}</span>
-</div>
-
-<div class="cat-nav">
-  <span class="cat-nav__item">{{ cat1 }}</span>
-  <span class="cat-nav__item">{{ cat2 }}</span>
-  <span class="cat-nav__item">{{ cat3 }}</span>
-  <span class="cat-nav__item">{{ cat4 }}</span>
-</div>
-
-{% case lang %}
-  {% when 'en' %}{% assign section_title = 'Latest Articles' %}
-          {% else %}{% assign section_title = '最新文章' %}
-{% endcase %}
-
-<h2 class="section-title">{{ section_title }}</h2>
-
-{% assign lang_posts = site.posts | where: "lang", lang %}
-
-{% if lang_posts.size > 0 %}
-{% assign featured_post = lang_posts | first %}
-<article class="post-featured">
-  <a class="post-featured__link" href="{{ featured_post.url | relative_url }}">
-    <div class="post-featured__media">
-      {% if featured_post.image %}<img data-src="{{ featured_post.image | relative_url }}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'/%3E" alt="{{ featured_post.title }}" width="1200" height="630">{% endif %}
-    </div>
-    <div class="post-featured__body">
-      <span class="post-featured__badge">{{ label_featured }}</span>
-      <h2 class="post-featured__title">{{ featured_post.title }}</h2>
-      <p class="post-featured__excerpt">{{ featured_post.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
-      <div class="post-featured__footer">
-        <span class="post-featured__meta">
-          <time datetime="{{ featured_post.date | date_to_xmlschema }}">{{ featured_post.date | date: '%Y-%m-%d' }}</time>{% if featured_post.categories.size > 0 %} · {{ featured_post.categories | first }}{% endif %} · {{ featured_post.content | strip_html | strip_newlines | size | divided_by: 600 | plus: 1 }} {{ label_min_read }}
-        </span>
-        <span class="post-featured__more">{% case lang %}{% when 'en' %}Read more →{% when 'vi' %}Đọc thêm →{% when 'ja' %}続きを読む →{% when 'ko' %}더 읽기 →{% when 'tr' %}Devamını oku →{% else %}阅读全文 →{% endcase %}</span>
+<section class="wrap section" aria-labelledby="latest">
+  <h2 id="latest" class="section__title">最新文章</h2>
+  {% assign posts = site.posts %}
+  {% if posts.size > 0 %}
+  {% assign first = posts.first %}
+  <article class="feature">
+    <a class="feature__link" href="{{ first.url | relative_url }}">
+      <div class="feature__body">
+        <p class="meta"><time datetime="{{ first.date | date_to_xmlschema }}">{{ first.date | date: '%Y-%m-%d' }}</time>{% if first.categories.size > 0 %}<span class="meta__cat">{{ first.categories | first }}</span>{% endif %}</p>
+        <h3>{{ first.title }}</h3>
+        <p class="feature__excerpt">{{ first.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
+        <span class="more">阅读全文</span>
       </div>
-    </div>
-  </a>
-</article>
-{% endif %}
-
-<ul class="post-list">
-  {% for post in lang_posts offset:1 %}
-  <li class="post-item">
-    <a class="post-item__link" href="{{ post.url | relative_url }}" aria-label="{{ post.title }}">
-      {% if post.image %}
-      <div class="post-item__media">
-        <img data-src="{{ post.image | relative_url }}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'/%3E" alt="{{ post.title }}" width="1200" height="630">
-      </div>
-      {% endif %}
-      <div class="post-item__body">
-        <div class="post-item__meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>{% if post.categories.size > 0 %} · {{ post.categories | join: ' / ' }}{% endif %} · {{ post.content | strip_html | strip_newlines | size | divided_by: 600 | plus: 1 }} {{ label_min_read }}
-        </div>
-        <h3 class="post-item__title">{{ post.title }}</h3>
-        <p class="post-item__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 80 }}</p>
-        <span class="post-item__more">
-          {% case lang %}
-            {% when 'en' %}Read more →
-            {% when 'ja' %}続きを読む →
-            {% when 'ko' %}더 읽기 →
-            {% when 'tr' %}Devamını oku →
-            {% when 'vi' %}Đọc thêm →
-            {% else %}阅读全文 →
-          {% endcase %}
-        </span>
-      </div>
+      {% if first.image %}<img class="feature__img" src="{{ first.image | relative_url }}" alt="" width="1200" height="630">{% endif %}
     </a>
-  </li>
-  {% endfor %}
-</ul>
+  </article>
+
+  {% if posts.size > 1 %}
+  <ul class="grid">
+    {% for post in posts offset:1 %}
+    <li class="card">
+      <a href="{{ post.url | relative_url }}">
+        <p class="meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>{% if post.categories.size > 0 %}<span class="meta__cat">{{ post.categories | first }}</span>{% endif %}</p>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 90 }}</p>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% else %}
+  <div class="empty">
+    <p>文章正在准备中。你可以先访问 <a href="https://www.anbowork.com">官网</a> 了解 AnBoWork。</p>
+  </div>
+  {% endif %}
+</section>
