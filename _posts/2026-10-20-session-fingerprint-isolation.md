@@ -4,7 +4,7 @@ date: 2026-10-20 11:00:00 +0800
 lang: zh
 categories: [功能介绍]
 tags: [会话指纹隔离, 多账号, 会话隔离, AnBoWork]
-image: /assets/images/cover-session-fingerprint-isolation.webp
+image: /assets/images/covers/session-fingerprint-isolation.webp
 excerpt: "同时使用多个账号时，会话之间的环境特征如果混在一起，很容易互相关联。AnBoWork 的会话指纹隔离让每个会话各自独立。"
 description: "会话指纹隔离是 AnBoWork 的核心功能之一：让不同会话各自使用独立的环境特征，互不干扰。了解什么是会话指纹、不隔离会有什么问题，以及适用场景。"
 ---

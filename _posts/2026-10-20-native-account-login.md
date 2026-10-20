@@ -4,7 +4,7 @@ date: 2026-10-20 12:00:00 +0800
 lang: zh
 categories: [功能介绍]
 tags: [原生账号登录, Claude Code, GPT, 谷歌反重力, Antigravity, AnBoWork]
-image: /assets/images/cover-native-account-login.webp
+image: /assets/images/covers/native-account-login.webp
 excerpt: "AnBoWork 对 Claude Code、GPT、谷歌反重力只支持原生账号登录：用你自己的官方账号，账号和订阅始终在你自己手里。"
 description: "AnBoWork 只支持原生账号登录，覆盖 Claude Code、GPT 与谷歌反重力（Google Antigravity）。了解什么是原生账号登录、为什么这样设计，以及如何开始使用。"
 ---

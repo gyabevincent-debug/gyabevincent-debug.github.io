@@ -4,7 +4,7 @@ date: 2026-10-20 10:00:00 +0800
 lang: zh
 categories: [功能介绍]
 tags: [AI网络加速, 账号加速, 网络稳定, AnBoWork]
-image: /assets/images/cover-stable-ai-network.webp
+image: /assets/images/covers/stable-ai-network.webp
 excerpt: "AI 工具对网络的稳定性很敏感。AnBoWork 为 AI 账号提供稳定的网络加速，让登录和日常使用更省心。"
 description: "AnBoWork 提供面向 AI 账号的网络稳定加速。了解网络不稳定会给 AI 账号使用带来什么麻烦，以及它如何与原生账号登录、会话指纹隔离配合。"
 ---
