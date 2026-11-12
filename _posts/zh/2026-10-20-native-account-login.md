@@ -1,17 +1,17 @@
 ---
-title: "只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力"
+title: "只支持原生账号登录：在 AnBoWork 里使用 Claude、Codex 与 Antigravity"
 date: 2026-10-20 12:00:00 +0800
 lang: zh
 ref: native-account-login
 permalink: /zh/2026/10/20/native-account-login/
 categories: [功能介绍]
-tags: [原生账号登录, Claude Code, GPT, 谷歌反重力, Antigravity, AnBoWork]
+tags: [原生账号登录, Claude, Codex, Antigravity, AnBoWork]
 image: /assets/images/covers/native-account-login.webp
-excerpt: "AnBoWork 对 Claude Code、GPT、谷歌反重力只支持原生账号登录：用你自己的官方账号，账号和订阅始终在你自己手里。"
-description: "AnBoWork 只支持原生账号登录，覆盖 Claude Code、GPT 与谷歌反重力（Google Antigravity）。了解什么是原生账号登录、为什么这样设计，以及如何开始使用。"
+excerpt: "AnBoWork 对 Claude、Codex、Antigravity 只支持原生账号登录：用你自己的官方账号，账号和订阅始终在你自己手里。"
+description: "AnBoWork 只支持原生账号登录，覆盖 Claude、Codex 与 Antigravity。了解什么是原生账号登录、为什么这样设计，以及如何开始使用。"
 ---
 
-> 一句话说明：在 AnBoWork 里使用 Claude Code、GPT 和谷歌反重力，你登录的是**自己在官方服务上的账号**，而不是别人转发给你的账号。
+> 一句话说明：在 AnBoWork 里使用 Claude、Codex 和 Antigravity，你登录的是**自己在官方服务上的账号**，而不是别人转发给你的账号。
 
 ## 什么是原生账号登录
 
@@ -19,9 +19,9 @@ description: "AnBoWork 只支持原生账号登录，覆盖 Claude Code、GPT �
 
 AnBoWork 在这几项服务上**只支持这一种登录方式**：
 
-- **Claude Code**
-- **GPT**
-- **谷歌反重力（Google Antigravity）**
+- **Claude**
+- **Codex**
+- **Antigravity**
 
 ## 为什么只做原生账号登录
 
@@ -34,7 +34,7 @@ AnBoWork 在这几项服务上**只支持这一种登录方式**：
 ## 如何开始使用
 
 1. 打开官网 [www.anbowork.com](https://www.anbowork.com)，下载并安装 AnBoWork。
-2. 启动后，选择你要使用的服务，例如 Claude Code、GPT 或谷歌反重力。
+2. 启动后，选择你要使用的服务，例如 Claude、Codex 或 Antigravity。
 3. 使用你自己的官方账号完成登录。
 
 ## 使用前需要知道的

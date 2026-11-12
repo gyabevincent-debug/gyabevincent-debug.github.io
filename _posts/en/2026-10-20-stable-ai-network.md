@@ -10,7 +10,7 @@ excerpt: "AI tools are sensitive to an unstable connection. AnBoWork offers a st
 description: "AnBoWork offers an optional stable network exit for AI accounts. See what an unstable network does to AI tools and how it works with native sign-in and session isolation."
 ---
 
-> In short: AnBoWork can give your AI accounts a stable network exit, so tools such as Claude Code, GPT and Google Antigravity are less likely to be interrupted by the connection.
+> In short: AnBoWork can give your AI accounts a stable network exit, so tools such as Claude, Codex and Antigravity are less likely to be interrupted by the connection.
 
 ## Why does an unstable network hit AI tools first?
 

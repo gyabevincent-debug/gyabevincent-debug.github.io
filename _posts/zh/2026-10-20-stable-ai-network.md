@@ -11,7 +11,7 @@ excerpt: "AI 工具对网络的稳定性很敏感。AnBoWork 为 AI 账号提供
 description: "AnBoWork 提供面向 AI 账号的网络稳定加速。了解网络不稳定会给 AI 账号使用带来什么麻烦，以及它如何与原生账号登录、会话指纹隔离配合。"
 ---
 
-> 一句话说明：AnBoWork 为你的 AI 账号提供稳定的网络加速，让 Claude Code、GPT、谷歌反重力这类工具用起来更稳。
+> 一句话说明：AnBoWork 为你的 AI 账号提供稳定的网络加速，让 Claude、Codex、Antigravity 这类工具用起来更稳。
 
 ## 网络不稳，AI 工具最先受影响
 
@@ -46,5 +46,5 @@ AnBoWork 围绕 AI 账号的使用做了三件事，它们是相互配合的：
 
 ## 相关阅读
 
-- [只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力]({% post_url zh/2026-10-20-native-account-login %})
+- [只支持原生账号登录：在 AnBoWork 里使用 Claude、Codex 与 Antigravity]({% post_url zh/2026-10-20-native-account-login %})
 - [会话指纹隔离是什么？为什么多账号、多会话需要它]({% post_url zh/2026-10-20-session-fingerprint-isolation %})

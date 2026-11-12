@@ -4,13 +4,13 @@ date: 2026-10-20 12:00:00 +0800
 lang: en
 ref: native-account-login
 categories: [Features]
-tags: [native account sign-in, Claude Code, GPT, Google Antigravity, AnBoWork]
+tags: [native account sign-in, Claude, Codex, Antigravity, AnBoWork]
 image: /assets/images/covers/native-account-login.webp
-excerpt: "AnBoWork supports only native account sign-in for Claude Code, GPT and Google Antigravity: you use your own official account, and it stays in your hands."
-description: "AnBoWork supports only native account sign-in for Claude Code, GPT and Google Antigravity. Learn what native sign-in means, why it is designed this way, and how to start."
+excerpt: "AnBoWork supports only native account sign-in for Claude, Codex and Antigravity: you use your own official account, and it stays in your hands."
+description: "AnBoWork supports only native account sign-in for Claude, Codex and Antigravity. Learn what native sign-in means, why it is designed this way, and how to start."
 ---
 
-> In short: when you use Claude Code, GPT or Google Antigravity in AnBoWork, you sign in with **your own account on the official service**, not an account somebody else relays to you.
+> In short: when you use Claude, Codex or Antigravity in AnBoWork, you sign in with **your own account on the official service**, not an account somebody else relays to you.
 
 ## What is native account sign-in?
 
@@ -18,9 +18,9 @@ Native account sign-in means using the account that you registered and subscribe
 
 For these services AnBoWork supports **only this one sign-in method**:
 
-- **Claude Code**
-- **GPT**
-- **Google Antigravity**
+- **Claude**
+- **Codex**
+- **Antigravity**
 
 ## Why only native account sign-in?
 
@@ -33,7 +33,7 @@ The choice has a few direct benefits:
 ## How do I start?
 
 1. Download and install AnBoWork from the [official website](https://www.anbowork.com/download).
-2. Open it and choose the service you want, such as Claude Code, GPT or Google Antigravity.
+2. Open it and choose the service you want, such as Claude, Codex or Antigravity.
 3. Sign in with your own official account.
 
 ## What should I know before using it?

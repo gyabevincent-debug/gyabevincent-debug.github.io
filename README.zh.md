@@ -29,7 +29,7 @@ AnBoWork（AnBoWork 工作台）是一款**统一模型、工具与任务环境�
 
 | 功能 | 一句话说明 | 详细文章 |
 |---|---|---|
-| **原生账号登录** | 登录发生在官方程序里，登录状态保存在你的电脑上，不经过 AnBoWork 转手，AnBoWork 也不读取你的账号密码 | [只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力](https://gyabevincent-debug.github.io/zh/2026/10/20/native-account-login/) |
+| **原生账号登录** | 登录发生在官方程序里，登录状态保存在你的电脑上，不经过 AnBoWork 转手，AnBoWork 也不读取你的账号密码 | [只支持原生账号登录：在 AnBoWork 里使用 Claude、Codex 与 Antigravity](https://gyabevincent-debug.github.io/zh/2026/10/20/native-account-login/) |
 | **专属网络出口（可选）** | 启用后 AI 请求保持一致的网络路径，出口国家与 IP 不变，会话时区自动对齐出口所在地；只作用于工作台自身的 AI 请求，不改系统代理、不装虚拟网卡 | [AI 网络稳定账号加速：让 AI 账号用得更稳](https://gyabevincent-debug.github.io/zh/2026/10/20/stable-ai-network/) |
 | **会话隔离** | 不同会话的运行环境互不干扰，多个账号、多个任务可以分开使用 | [会话指纹隔离是什么？为什么多账号、多会话需要它](https://gyabevincent-debug.github.io/zh/2026/10/20/session-fingerprint-isolation/) |
 | **跨模型记忆** | 事实、场景、个人画像三层记忆，项目背景和个人偏好可跨模型、跨对话延续；随时查看、修改、删除，对话原文不上传 | — |
@@ -41,7 +41,7 @@ AnBoWork（AnBoWork 工作台）是一款**统一模型、工具与任务环境�
 | 项目 | 内容 |
 |---|---|
 | **系统** | Windows 10 / 11（64 位）；macOS（Apple Silicon 与 Intel 分别提供安装包）；Linux（Debian / Ubuntu 的 deb 包，或免安装的 AppImage） |
-| **官方工具（用自己的账号登录）** | Claude、Codex、Antigravity（谷歌反重力） |
+| **官方工具（用自己的账号登录）** | Claude、Codex、Antigravity |
 | **平台提供的模型** | Claude、GPT、Gemini、Grok、DeepSeek、Kimi、GLM、MiniMax、Qwen |
 | **界面语言** | 19 种 |
 
@@ -63,7 +63,7 @@ AnBoWork（AnBoWork 工作台）是一款**统一模型、工具与任务环境�
 
 - [**AnBoWork 工作台是什么？一篇看懂 AI Agent 桌面工作台**](https://gyabevincent-debug.github.io/zh/2026/10/20/what-is-anbowork/)<br>
   它是什么、适合谁、怎么开始用。
-- [**只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力**](https://gyabevincent-debug.github.io/zh/2026/10/20/native-account-login/)<br>
+- [**只支持原生账号登录：在 AnBoWork 里使用 Claude、Codex 与 Antigravity**](https://gyabevincent-debug.github.io/zh/2026/10/20/native-account-login/)<br>
   什么是原生账号登录，为什么只做这一种。
 - [**会话指纹隔离是什么？为什么多账号、多会话需要它**](https://gyabevincent-debug.github.io/zh/2026/10/20/session-fingerprint-isolation/)<br>
   不隔离会有什么问题，适合哪些场景。

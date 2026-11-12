@@ -40,5 +40,5 @@ AnBoWork 提供**会话指纹隔离**：每个会话使用各自独立的环境�
 
 ## 相关阅读
 
-- [只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力]({% post_url zh/2026-10-20-native-account-login %})
+- [只支持原生账号登录：在 AnBoWork 里使用 Claude、Codex 与 Antigravity]({% post_url zh/2026-10-20-native-account-login %})
 - [AI 网络稳定账号加速：让 AI 账号用得更稳]({% post_url zh/2026-10-20-stable-ai-network %})
