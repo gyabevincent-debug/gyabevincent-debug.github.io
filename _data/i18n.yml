@@ -1,0 +1,71 @@
+# 界面文案。键是页面的 lang（en / zh），模板里用 site.data.i18n[page.lang] 取。
+en:
+  html_lang: en
+  hreflang: en
+  locale: en_US
+  home: /
+  site_name: AnBoWork Blog
+  site_desc: "The official AnBoWork blog: guides to the desktop AI Agent workbench, native account sign-in, session isolation and a stable network for AI accounts."
+  brand_sub: Official blog
+  skip: Skip to content
+  nav_label: Main navigation
+  categories: Categories
+  categories_label: Article categories
+  cat_all: All
+  download: Download AnBoWork
+  download_url: https://www.anbowork.com/download
+  official: Official site
+  official_url: https://www.anbowork.com
+  rss: RSS
+  feed_url: /feed.xml
+  list_title: All articles
+  articles_unit: articles
+  list_sub: Guides, feature explainers and product updates for AnBoWork
+  empty: "Articles are on the way. In the meantime, visit the"
+  empty_link: official site
+  empty_tail: "to learn about AnBoWork."
+  read_time_prefix: ""
+  read_time_suffix: " min read"
+  date_format: "%B %-d, %Y"
+  cta_title: Get started with AnBoWork
+  cta_text: Download the desktop workbench and sign in with your own official account.
+  pager_label: Previous and next article
+  prev: Previous
+  next: Next
+  toc: On this page
+  switch_label: Language
+zh:
+  html_lang: zh-CN
+  hreflang: zh-CN
+  locale: zh_CN
+  home: /zh/
+  site_name: AnBoWork 工作台博客
+  site_desc: "AnBoWork 工作台官方博客：AI Agent 桌面工作台、原生账号登录、会话隔离与 AI 账号网络稳定的使用教程和功能介绍。"
+  brand_sub: 官方博客
+  skip: 跳到正文
+  nav_label: 主导航
+  categories: 分类
+  categories_label: 文章分类
+  cat_all: 全部
+  download: 下载 AnBoWork
+  download_url: https://www.anbowork.com/zh/download
+  official: 官网
+  official_url: https://www.anbowork.com/zh
+  rss: RSS
+  feed_url: /zh/feed.xml
+  list_title: 全部文章
+  articles_unit: 篇
+  list_sub: AnBoWork 的使用教程、功能介绍与产品更新
+  empty: 文章正在准备中。你可以先访问
+  empty_link: 官网
+  empty_tail: 了解 AnBoWork。
+  read_time_prefix: "约 "
+  read_time_suffix: " 分钟阅读"
+  date_format: "%Y-%m-%d"
+  cta_title: 开始使用 AnBoWork
+  cta_text: 下载桌面工作台，用你自己的官方账号登录即可使用。
+  pager_label: 上一篇和下一篇
+  prev: 上一篇
+  next: 下一篇
+  toc: 本文目录
+  switch_label: 语言

@@ -1,49 +1,58 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- include lang-alts.html -%}
+{%- assign lang_posts = site.posts | where: "lang", page.lang -%}
+{%- assign all_cats = lang_posts | map: "categories" | join: "," | split: "," | uniq -%}
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{{ t.html_lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#0581fa">
-  {% seo %}
-  {% feed_meta %}
+  {% include head-seo.html %}
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <a class="skip" href="#main">跳到正文</a>
-  {% assign all_cats = site.posts | map: "categories" | join: "," | split: "," | uniq %}
+  <a class="skip" href="#main">{{ t.skip }}</a>
   <div class="shell">
     <aside class="side">
-      <a class="side__brand" href="{{ '/' | relative_url }}">
+      <a class="side__brand" href="{{ t.home | relative_url }}">
         <img src="{{ '/assets/images/favicon.png' | relative_url }}" width="32" height="32" alt="">
-        <span><strong>AnBoWork</strong><small>官方博客</small></span>
+        <span><strong>AnBoWork</strong><small>{{ t.brand_sub }}</small></span>
       </a>
 
-      <nav class="side__nav" aria-label="主导航">
-        {% for item in site.data.navigation %}
-        <a href="{{ item.url | relative_url }}"{% if page.url == item.url or page.layout == 'post' and item.url == '/' %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      <nav class="side__nav" aria-label="{{ t.nav_label }}">
+        {% for item in site.data.navigation[page.lang] %}
+        {%- assign cur = false -%}
+        {%- if page.url == item.url -%}{%- assign cur = true -%}{%- elsif page.layout == 'post' and item.url == t.home -%}{%- assign cur = true -%}{%- endif %}
+        <a href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if cur %} aria-current="page"{% endif %}>{{ item.title }}</a>
         {% endfor %}
+      </nav>
+
+      <nav class="lang" aria-label="{{ t.switch_label }}">
+        <a href="{{ en_url | relative_url }}" lang="en" hreflang="en"{% if page.lang == 'en' %} aria-current="true"{% endif %}>English</a>
+        <a href="{{ zh_url | relative_url }}" lang="zh-CN" hreflang="zh-CN"{% if page.lang == 'zh' %} aria-current="true"{% endif %}>中文</a>
       </nav>
 
       {% if all_cats.size > 0 %}
       <div class="side__group">
-        <p class="side__label">分类</p>
-        <nav class="cats" aria-label="文章分类">
-          <a href="{{ '/' | relative_url }}" data-c="">全部<span>{{ site.posts.size }}</span></a>
+        <p class="side__label">{{ t.categories }}</p>
+        <nav class="cats" aria-label="{{ t.categories_label }}">
+          <a href="{{ t.home | relative_url }}" data-c="">{{ t.cat_all }}<span>{{ lang_posts.size }}</span></a>
           {% for cat in all_cats %}
-          {% assign n = site.posts | where_exp: "p", "p.categories contains cat" | size %}
-          <a href="{{ '/' | relative_url }}?c={{ cat | uri_escape }}" data-c="{{ cat }}">{{ cat }}<span>{{ n }}</span></a>
+          {% assign n = lang_posts | where_exp: "p", "p.categories contains cat" | size %}
+          <a href="{{ t.home | relative_url }}?c={{ cat | uri_escape }}" data-c="{{ cat }}">{{ cat }}<span>{{ n }}</span></a>
           {% endfor %}
         </nav>
       </div>
       {% endif %}
 
       <div class="side__foot">
-        <a class="btn btn--primary" href="https://www.anbowork.com/download">下载 AnBoWork</a>
+        <a class="btn btn--primary" href="{{ t.download_url }}">{{ t.download }}</a>
         <p>
-          <a href="https://www.anbowork.com">官网</a>
-          <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+          <a href="{{ t.official_url }}">{{ t.official }}</a>
+          <a href="{{ t.feed_url | relative_url }}">{{ t.rss }}</a>
         </p>
         <small>&copy; {{ site.time | date: '%Y' }} AnBoWork</small>
       </div>

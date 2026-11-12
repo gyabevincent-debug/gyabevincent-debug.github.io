@@ -1,6 +1,14 @@
-- title: 文章
-  url: /
-- title: 官网
-  url: https://www.anbowork.com
-- title: 关于
-  url: /about/
+en:
+  - title: Articles
+    url: /
+  - title: Official site
+    url: https://www.anbowork.com
+  - title: About
+    url: /about/
+zh:
+  - title: 文章
+    url: /zh/
+  - title: 官网
+    url: https://www.anbowork.com/zh
+  - title: 关于
+    url: /zh/about/

@@ -1,18 +1,25 @@
 ---
 layout: page
-title: 关于本站
+lang: en
+ref: about
+title: About this blog
 permalink: /about/
+description: "The AnBoWork Blog is the official blog of AnBoWork, a desktop AI Agent workbench. It publishes tutorials, feature explainers and product updates."
 ---
 
-**AnBoWork 工作台博客** 是 AnBoWork 的官方博客，记录 AI Agent 桌面工作台的使用教程、办公自动化思路和功能更新。
+The **AnBoWork Blog** is the official blog of AnBoWork. It covers the desktop AI Agent workbench: how to use it, how to hand office work to an AI, and what has changed in the product.
 
-我们会写什么：
+What we write about:
 
-- AnBoWork 工作台的上手与进阶教程
-- 用自然语言完成写作、资料整理、文档处理的实际做法
-- 产品更新说明与使用小技巧
+- Getting started with, and going deeper into, the AnBoWork workbench
+- Doing writing, research and document work in plain language
+- Product updates and small usage tips
 
-相关链接：
+The blog is available in English and Chinese. Use the language switch in the sidebar to change between them.
 
-- 官方网站：[www.anbowork.com](https://www.anbowork.com)
-- 下载页面：[www.anbowork.com/download](https://www.anbowork.com/download)
+Product details are checked against the official website, which is the source of truth for features and downloads.
+
+Related links:
+
+- Official website: [www.anbowork.com](https://www.anbowork.com)
+- Download page: [www.anbowork.com/download](https://www.anbowork.com/download)

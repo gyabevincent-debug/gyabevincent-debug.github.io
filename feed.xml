@@ -1,0 +1,27 @@
+---
+layout: null
+lang: en
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign lang_posts = site.posts | where: "lang", page.lang -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ t.html_lang }}">
+  <title>{{ t.site_name | xml_escape }}</title>
+  <subtitle>{{ t.site_desc | xml_escape }}</subtitle>
+  <link href="{{ t.feed_url | absolute_url }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ t.home | absolute_url }}" rel="alternate" type="text/html"/>
+  <id>{{ t.home | absolute_url }}</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author><name>AnBoWork</name></author>
+{%- for post in lang_posts limit: 20 %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html"/>
+    <id>{{ post.url | absolute_url }}</id>
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
+    <summary>{{ post.excerpt | strip_html | strip_newlines | xml_escape }}</summary>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+{%- endfor %}
+</feed>

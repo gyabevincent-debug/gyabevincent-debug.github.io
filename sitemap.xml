@@ -1,0 +1,31 @@
+---
+layout: null
+---
+{%- comment -%} 自己生成 sitemap,为的是带上各语言版本之间的 hreflang;固定页面不写 lastmod,文章用自己的更新时间。 {%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign ref_pages = site.pages | where_exp: "p", "p.ref != nil" %}
+{%- for p in ref_pages %}
+  {%- assign alts = site.pages | where: "ref", p.ref %}
+  {%- assign en_alt = alts | where: "lang", "en" | first %}
+  <url>
+    <loc>{{ p.url | absolute_url }}</loc>
+    {%- for a in alts %}
+    <xhtml:link rel="alternate" hreflang="{{ site.data.i18n[a.lang].hreflang }}" href="{{ a.url | absolute_url }}"/>
+    {%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_alt.url | absolute_url }}"/>
+  </url>
+{%- endfor %}
+{%- for post in site.posts %}
+  {%- assign alts = site.posts | where: "ref", post.ref %}
+  {%- assign en_alt = alts | where: "lang", "en" | first %}
+  <url>
+    <loc>{{ post.url | absolute_url }}</loc>
+    <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
+    {%- for a in alts %}
+    <xhtml:link rel="alternate" hreflang="{{ site.data.i18n[a.lang].hreflang }}" href="{{ a.url | absolute_url }}"/>
+    {%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_alt.url | absolute_url }}"/>
+  </url>
+{%- endfor %}
+</urlset>

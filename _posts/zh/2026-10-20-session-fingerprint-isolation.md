@@ -2,6 +2,8 @@
 title: "会话指纹隔离是什么？为什么多账号、多会话需要它"
 date: 2026-10-20 11:00:00 +0800
 lang: zh
+ref: session-fingerprint-isolation
+permalink: /zh/2026/10/20/session-fingerprint-isolation/
 categories: [功能介绍]
 tags: [会话指纹隔离, 多账号, 会话隔离, AnBoWork]
 image: /assets/images/covers/session-fingerprint-isolation.webp
@@ -38,5 +40,5 @@ AnBoWork 提供**会话指纹隔离**：每个会话使用各自独立的环境�
 
 ## 相关阅读
 
-- [只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力]({% post_url 2026-10-20-native-account-login %})
-- [AI 网络稳定账号加速：让 AI 账号用得更稳]({% post_url 2026-10-20-stable-ai-network %})
+- [只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力]({% post_url zh/2026-10-20-native-account-login %})
+- [AI 网络稳定账号加速：让 AI 账号用得更稳]({% post_url zh/2026-10-20-stable-ai-network %})

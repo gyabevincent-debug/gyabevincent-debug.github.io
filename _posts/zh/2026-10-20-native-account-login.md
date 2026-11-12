@@ -2,6 +2,8 @@
 title: "只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力"
 date: 2026-10-20 12:00:00 +0800
 lang: zh
+ref: native-account-login
+permalink: /zh/2026/10/20/native-account-login/
 categories: [功能介绍]
 tags: [原生账号登录, Claude Code, GPT, 谷歌反重力, Antigravity, AnBoWork]
 image: /assets/images/covers/native-account-login.webp
@@ -42,5 +44,5 @@ AnBoWork 在这几项服务上**只支持这一种登录方式**：
 
 ## 相关阅读
 
-- [会话指纹隔离是什么？为什么多账号、多会话需要它]({% post_url 2026-10-20-session-fingerprint-isolation %})
-- [AI 网络稳定账号加速：让 AI 账号用得更稳]({% post_url 2026-10-20-stable-ai-network %})
+- [会话指纹隔离是什么？为什么多账号、多会话需要它]({% post_url zh/2026-10-20-session-fingerprint-isolation %})
+- [AI 网络稳定账号加速：让 AI 账号用得更稳]({% post_url zh/2026-10-20-stable-ai-network %})

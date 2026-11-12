@@ -1,0 +1,67 @@
+{%- comment -%}
+  标题、描述、canonical、hreflang、Open Graph、Twitter Card 和结构化数据。
+  需要先 include lang-alts.html,并且 t = site.data.i18n[page.lang]。
+{%- endcomment -%}
+{%- assign seo_title = page.seo_title | default: page.title -%}
+{%- if page.layout == 'post' or page.layout == 'page' -%}
+  {%- capture full_title -%}{{ seo_title }} | {{ t.site_name }}{%- endcapture -%}
+{%- else -%}
+  {%- assign full_title = seo_title | default: t.site_name -%}
+{%- endif -%}
+{%- assign desc = page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 200 -%}
+{%- if desc == '' -%}{%- assign desc = t.site_desc -%}{%- endif -%}
+{%- assign og_image = page.image | default: '/assets/images/favicon.png' | absolute_url -%}
+{%- assign canonical = page.url | absolute_url -%}
+<title>{{ full_title }}</title>
+<meta name="description" content="{{ desc | escape }}">
+<link rel="canonical" href="{{ canonical }}">
+{%- if page.ref %}
+{%- for a in alts %}
+<link rel="alternate" hreflang="{{ site.data.i18n[a.lang].hreflang }}" href="{{ a.url | absolute_url }}">
+{%- endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ en_url | absolute_url }}">
+{%- endif %}
+<link rel="alternate" type="application/atom+xml" title="{{ t.site_name | escape }}" href="{{ t.feed_url | absolute_url }}">
+<meta property="og:site_name" content="{{ t.site_name | escape }}">
+<meta property="og:locale" content="{{ t.locale }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ full_title | escape }}">
+<meta property="og:description" content="{{ desc | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ og_image }}">
+{%- if page.layout == 'post' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{%- endif %}
+<meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:title" content="{{ full_title | escape }}">
+<meta name="twitter:description" content="{{ desc | escape }}">
+<meta name="twitter:image" content="{{ og_image }}">
+{%- if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ desc | jsonify }},
+  "inLanguage": {{ t.html_lang | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+  "mainEntityOfPage": {{ canonical | jsonify }},
+  "image": {{ og_image | jsonify }},
+  "author": { "@type": "Organization", "name": "AnBoWork", "url": "https://www.anbowork.com" },
+  "publisher": { "@type": "Organization", "name": "AnBoWork", "logo": { "@type": "ImageObject", "url": {{ '/assets/images/favicon.png' | absolute_url | jsonify }} } }
+}
+</script>
+{%- elsif page.layout == 'home' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": {{ t.site_name | jsonify }},
+  "description": {{ t.site_desc | jsonify }},
+  "inLanguage": {{ t.html_lang | jsonify }},
+  "url": {{ canonical | jsonify }},
+  "publisher": { "@type": "Organization", "name": "AnBoWork", "url": "https://www.anbowork.com" }
+}
+</script>
+{%- endif %}

@@ -14,7 +14,7 @@
   &nbsp;·&nbsp;
   <a href="https://www.anbowork.com/zh">访问官网</a>
   &nbsp;·&nbsp;
-  <a href="https://gyabevincent-debug.github.io/">阅读博客</a>
+  <a href="https://gyabevincent-debug.github.io/zh/">阅读博客</a>
 </p>
 
 ---
@@ -23,15 +23,15 @@
 
 AnBoWork（AnBoWork 工作台）是一款**统一模型、工具与任务环境的 AI Agent 桌面工作台**，支持 Windows、macOS 和 Linux。它调用你电脑上的官方 AI 命令行工具，由你用自己的账号在官方程序里登录；会话、历史记录、MCP、Skills 和长期记忆都放在同一个工作台里管理，复杂任务先出计划、你确认后再执行，最后交付可继续编辑的 Word、Excel、PPT、PDF、网站或代码项目。
 
-这个博客是 AnBoWork 的官方博客，用中文讲清楚每个功能是什么、适合谁、有哪些限制。
+这个博客是 AnBoWork 的官方博客，讲清楚每个功能是什么、适合谁、有哪些限制。博客默认显示英文，可以切换到中文（本页链接都指向中文版）。
 
 ## 核心功能有哪些？
 
 | 功能 | 一句话说明 | 详细文章 |
 |---|---|---|
-| **原生账号登录** | 登录发生在官方程序里，登录状态保存在你的电脑上，不经过 AnBoWork 转手，AnBoWork 也不读取你的账号密码 | [只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力](https://gyabevincent-debug.github.io/2026/10/20/native-account-login/) |
-| **专属网络出口（可选）** | 启用后 AI 请求保持一致的网络路径，出口国家与 IP 不变，会话时区自动对齐出口所在地；只作用于工作台自身的 AI 请求，不改系统代理、不装虚拟网卡 | [AI 网络稳定账号加速：让 AI 账号用得更稳](https://gyabevincent-debug.github.io/2026/10/20/stable-ai-network/) |
-| **会话隔离** | 不同会话的运行环境互不干扰，多个账号、多个任务可以分开使用 | [会话指纹隔离是什么？为什么多账号、多会话需要它](https://gyabevincent-debug.github.io/2026/10/20/session-fingerprint-isolation/) |
+| **原生账号登录** | 登录发生在官方程序里，登录状态保存在你的电脑上，不经过 AnBoWork 转手，AnBoWork 也不读取你的账号密码 | [只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力](https://gyabevincent-debug.github.io/zh/2026/10/20/native-account-login/) |
+| **专属网络出口（可选）** | 启用后 AI 请求保持一致的网络路径，出口国家与 IP 不变，会话时区自动对齐出口所在地；只作用于工作台自身的 AI 请求，不改系统代理、不装虚拟网卡 | [AI 网络稳定账号加速：让 AI 账号用得更稳](https://gyabevincent-debug.github.io/zh/2026/10/20/stable-ai-network/) |
+| **会话隔离** | 不同会话的运行环境互不干扰，多个账号、多个任务可以分开使用 | [会话指纹隔离是什么？为什么多账号、多会话需要它](https://gyabevincent-debug.github.io/zh/2026/10/20/session-fingerprint-isolation/) |
 | **跨模型记忆** | 事实、场景、个人画像三层记忆，项目背景和个人偏好可跨模型、跨对话延续；随时查看、修改、删除，对话原文不上传 | — |
 | **计划模式** | 复杂任务先澄清目标、只读查看资料，再提交计划；你可以批注、调整或拒绝，确认后才开始实施 | — |
 | **插件、MCP 与 Skills** | 插件按需安装，AI 建议安装时先由你确认（如 Office 工具包、Git 改动查看器、四象限待办）；也可让 AI 协助接入 MCP，用 Skills 沉淀可复用的工作方法 | — |
@@ -61,13 +61,13 @@ AnBoWork（AnBoWork 工作台）是一款**统一模型、工具与任务环境�
 
 ## 博客里能读到什么？
 
-- [**AnBoWork 工作台是什么？一篇看懂 AI Agent 桌面工作台**](https://gyabevincent-debug.github.io/2026/10/20/what-is-anbowork/)<br>
+- [**AnBoWork 工作台是什么？一篇看懂 AI Agent 桌面工作台**](https://gyabevincent-debug.github.io/zh/2026/10/20/what-is-anbowork/)<br>
   它是什么、适合谁、怎么开始用。
-- [**只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力**](https://gyabevincent-debug.github.io/2026/10/20/native-account-login/)<br>
+- [**只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力**](https://gyabevincent-debug.github.io/zh/2026/10/20/native-account-login/)<br>
   什么是原生账号登录，为什么只做这一种。
-- [**会话指纹隔离是什么？为什么多账号、多会话需要它**](https://gyabevincent-debug.github.io/2026/10/20/session-fingerprint-isolation/)<br>
+- [**会话指纹隔离是什么？为什么多账号、多会话需要它**](https://gyabevincent-debug.github.io/zh/2026/10/20/session-fingerprint-isolation/)<br>
   不隔离会有什么问题，适合哪些场景。
-- [**AI 网络稳定账号加速：让 AI 账号用得更稳**](https://gyabevincent-debug.github.io/2026/10/20/stable-ai-network/)<br>
+- [**AI 网络稳定账号加速：让 AI 账号用得更稳**](https://gyabevincent-debug.github.io/zh/2026/10/20/stable-ai-network/)<br>
   网络不稳对 AI 工具的影响，以及三个功能怎么配合。
 
 ## 常见问题
@@ -94,6 +94,6 @@ AnBoWork（AnBoWork 工作台）是一款**统一模型、工具与任务环境�
 - 每篇文章开头先给一句话结论，文末列出相关阅读。
 - 产品信息核对于 **2026 年 11 月**，以[官网](https://www.anbowork.com/zh)当前页面为准。
 - AnBoWork 由 Anbo Technology LLC 运营。
-- 官网：<https://www.anbowork.com>　|　博客：<https://gyabevincent-debug.github.io>　|　[关于本站](https://gyabevincent-debug.github.io/about/)
+- 官网：<https://www.anbowork.com>　|　博客：<https://gyabevincent-debug.github.io/zh/>　|　[关于本站](https://gyabevincent-debug.github.io/zh/about/)
 
 基于 Jekyll 构建，托管于 GitHub Pages。

@@ -2,6 +2,8 @@
 title: "AI 网络稳定账号加速：让 AI 账号用得更稳"
 date: 2026-10-20 10:00:00 +0800
 lang: zh
+ref: stable-ai-network
+permalink: /zh/2026/10/20/stable-ai-network/
 categories: [功能介绍]
 tags: [AI网络加速, 账号加速, 网络稳定, AnBoWork]
 image: /assets/images/covers/stable-ai-network.webp
@@ -44,5 +46,5 @@ AnBoWork 围绕 AI 账号的使用做了三件事，它们是相互配合的：
 
 ## 相关阅读
 
-- [只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力]({% post_url 2026-10-20-native-account-login %})
-- [会话指纹隔离是什么？为什么多账号、多会话需要它]({% post_url 2026-10-20-session-fingerprint-isolation %})
+- [只支持原生账号登录：在 AnBoWork 里使用 Claude Code、GPT 与谷歌反重力]({% post_url zh/2026-10-20-native-account-login %})
+- [会话指纹隔离是什么？为什么多账号、多会话需要它]({% post_url zh/2026-10-20-session-fingerprint-isolation %})

@@ -23,15 +23,15 @@
 
 AnBoWork is a **desktop AI Agent workbench that brings models, tools and your task environment into one app**, for Windows, macOS and Linux. It runs the official AI command-line tools installed on your computer, and you sign in to them with your own account. Sessions, history, MCP, Skills and long-term memory are managed in one place. Complex tasks start with a plan that you approve before anything runs, and the result is an editable Word, Excel, PowerPoint or PDF file, a website, or a code project.
 
-This is the official AnBoWork blog. It explains what each feature is, who it suits and where its limits are. The articles are written in Chinese.
+This is the official AnBoWork blog. It explains what each feature is, who it suits and where its limits are. The blog is in English by default, with a language switch to Chinese ([中文](https://gyabevincent-debug.github.io/zh/)).
 
 ## What are the main features?
 
-| Feature | In one line | Article (Chinese) |
+| Feature | In one line | Article |
 |---|---|---|
-| **Native account sign-in** | You sign in inside the official program. The login stays on your computer, is not passed through AnBoWork, and AnBoWork does not read your account password | [Native account sign-in only: using Claude Code, GPT and Google Antigravity in AnBoWork](https://gyabevincent-debug.github.io/2026/10/20/native-account-login/) |
+| **Native account sign-in** | You sign in inside the official program. The login stays on your computer, is not passed through AnBoWork, and AnBoWork does not read your account password | [Native Account Sign-In: Use Your Own Accounts in AnBoWork](https://gyabevincent-debug.github.io/2026/10/20/native-account-login/) |
 | **Dedicated network exit (optional)** | Once enabled, AI requests keep a consistent network path: the exit country and IP stay the same and the session time zone follows the exit region. It only applies to AnBoWork's own AI requests: no system proxy change, no virtual network adapter | [A stable network for your AI accounts](https://gyabevincent-debug.github.io/2026/10/20/stable-ai-network/) |
-| **Session isolation** | Each session runs in its own environment, so several accounts and tasks can be kept apart | [What is session fingerprint isolation, and why multiple accounts need it](https://gyabevincent-debug.github.io/2026/10/20/session-fingerprint-isolation/) |
+| **Session isolation** | Each session runs in its own environment, so several accounts and tasks can be kept apart | [What Is Session Fingerprint Isolation, and Why Multiple Accounts Need It](https://gyabevincent-debug.github.io/2026/10/20/session-fingerprint-isolation/) |
 | **Memory across models** | Three layers (facts, scenes, personal profile). Project background and preferences carry across models and conversations. You can view, edit and delete them, and the original chat text is not uploaded | — |
 | **Plan-first workflow** | For complex tasks it clarifies the goal, reads material in read-only mode, then submits a plan. You can annotate, adjust or reject it, and nothing is carried out until you approve | — |
 | **Plugins, MCP and Skills** | Plugins install only when you need them, and you confirm first when the AI suggests one (for example the Office toolkit, a Git diff viewer, a priority-matrix to-do list). The AI can also help connect MCP, and Skills hold reusable ways of working | — |
@@ -61,13 +61,13 @@ Official accounts, platform resources and your own API each use their own quota.
 
 ## What can I read on the blog?
 
-- [**What is AnBoWork? An AI Agent desktop workbench in one read**](https://gyabevincent-debug.github.io/2026/10/20/what-is-anbowork/) (Chinese)<br>
+- [**What Is AnBoWork? A Desktop AI Agent Workbench, Explained**](https://gyabevincent-debug.github.io/2026/10/20/what-is-anbowork/)<br>
   What it is, who it suits and how to start.
-- [**Native account sign-in only: using Claude Code, GPT and Google Antigravity in AnBoWork**](https://gyabevincent-debug.github.io/2026/10/20/native-account-login/) (Chinese)<br>
+- [**Native Account Sign-In: Use Your Own Accounts in AnBoWork**](https://gyabevincent-debug.github.io/2026/10/20/native-account-login/)<br>
   What native account sign-in means and why it is the only option.
-- [**What is session fingerprint isolation, and why multiple accounts need it**](https://gyabevincent-debug.github.io/2026/10/20/session-fingerprint-isolation/) (Chinese)<br>
+- [**What Is Session Fingerprint Isolation, and Why Multiple Accounts Need It**](https://gyabevincent-debug.github.io/2026/10/20/session-fingerprint-isolation/)<br>
   What goes wrong without isolation and where it helps.
-- [**A stable network for your AI accounts**](https://gyabevincent-debug.github.io/2026/10/20/stable-ai-network/) (Chinese)<br>
+- [**A Stable Network for Your AI Accounts**](https://gyabevincent-debug.github.io/2026/10/20/stable-ai-network/)<br>
   How an unstable network affects AI tools, and how the three features work together.
 
 ## FAQ

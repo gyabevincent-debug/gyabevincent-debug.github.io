@@ -1,0 +1,21 @@
+{%- comment -%}
+  找出当前页面在各语言下的对应页面(靠 front matter 的 ref 配对)。
+  输出变量:alts(所有语言版本)、en_url、zh_url(没有对应版本时退回各语言首页)。
+{%- endcomment -%}
+{%- assign en_url = '/' -%}
+{%- assign zh_url = '/zh/' -%}
+{%- assign alts = '' | split: '' -%}
+{%- if page.ref -%}
+  {%- if page.layout == 'post' -%}
+    {%- assign alts = site.posts | where: 'ref', page.ref -%}
+  {%- else -%}
+    {%- assign alts = site.pages | where: 'ref', page.ref -%}
+  {%- endif -%}
+  {%- for a in alts -%}
+    {%- if a.lang == 'en' -%}
+      {%- assign en_url = a.url -%}
+    {%- elsif a.lang == 'zh' -%}
+      {%- assign zh_url = a.url -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

@@ -1,28 +1,30 @@
 ---
 layout: default
 ---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign lang_posts = site.posts | where: "lang", page.lang -%}
 <div class="list-head">
-  <h1 id="list-title">全部文章</h1>
-  <p><span id="count">{{ site.posts.size }}</span> 篇 · AnBoWork 的使用教程、功能介绍与产品更新</p>
+  <h1 id="list-title">{{ t.list_title }}</h1>
+  <p><span id="count">{{ lang_posts.size }}</span> {{ t.articles_unit }} · {{ t.list_sub }}</p>
 </div>
 
-{% if site.posts.size > 0 %}
+{% if lang_posts.size > 0 %}
 <div class="rows">
-  {% for post in site.posts %}
+  {% for post in lang_posts %}
   <article class="row" data-cat="{{ post.categories | join: '|' }}">
     <a class="row__media" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
       {% if post.image %}<img src="{{ post.image | relative_url }}" alt="" width="1200" height="630"{% unless forloop.first %} loading="lazy"{% endunless %}>{% else %}<span class="ph">{{ post.categories | first }}</span>{% endif %}
     </a>
     <div class="row__body">
-      <p class="meta"><span class="meta__cat">{{ post.categories | first }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time></p>
+      <p class="meta"><span class="meta__cat">{{ post.categories | first }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: t.date_format }}</time></p>
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <p class="row__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 90 }}</p>
+      <p class="row__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 200 }}</p>
     </div>
   </article>
   {% endfor %}
 </div>
 {% else %}
 <div class="empty">
-  <p>文章正在准备中。你可以先访问 <a href="https://www.anbowork.com">官网</a> 了解 AnBoWork。</p>
+  <p>{{ t.empty }} <a href="{{ t.official_url }}">{{ t.empty_link }}</a> {{ t.empty_tail }}</p>
 </div>
 {% endif %}

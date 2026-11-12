@@ -2,18 +2,20 @@
 title: "AnBoWork 工作台是什么？一篇看懂 AI Agent 桌面工作台"
 date: 2026-10-20 09:00:00 +0800
 lang: zh
+ref: what-is-anbowork
+permalink: /zh/2026/10/20/what-is-anbowork/
 categories: [使用指南]
 tags: [AnBoWork, AI工作台, AI Agent, 办公自动化]
 image: /assets/images/covers/what-is-anbowork.webp
-excerpt: "AnBoWork 是一款支持 Windows 与 macOS 的 AI Agent 桌面工作台。这篇用最直白的话讲清楚它是什么、适合谁、怎么开始用。"
-description: "AnBoWork 工作台简介：支持 Windows 与 macOS 的 AI Agent 桌面工作台，把对话、写作、资料整理和日常办公放进同一个应用，附下载与上手方式。"
+excerpt: "AnBoWork 是一款支持 Windows、macOS 与 Linux 的 AI Agent 桌面工作台。这篇用最直白的话讲清楚它是什么、适合谁、怎么开始用。"
+description: "AnBoWork 工作台简介：支持 Windows、macOS 与 Linux 的 AI Agent 桌面工作台，把对话、写作、资料整理和日常办公放进同一个应用，附下载与上手方式。"
 ---
 
 > 想直接开始？前往官网 [www.anbowork.com](https://www.anbowork.com) 下载安装包。
 
 ## 它是什么
 
-AnBoWork 是一款 **AI Agent 桌面工作台**，支持 Windows 与 macOS。和只能聊天的 AI 不同，工作台的思路是"把任务交给 AI"：你用自然语言描述要做的事，由 AI 在同一个界面里完成对话、写作、资料整理等工作。
+AnBoWork 是一款 **AI Agent 桌面工作台**，支持 Windows、macOS 与 Linux。和只能聊天的 AI 不同，工作台的思路是"把任务交给 AI"：你用自然语言描述要做的事，由 AI 在同一个界面里完成对话、写作、资料整理等工作。
 
 ## 适合谁
 

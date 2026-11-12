@@ -1,10 +1,11 @@
-title: "AnBoWork 工作台博客"
+# 默认语言是英文(站点根目录),中文在 /zh/ 下。界面文案见 _data/i18n.yml,导航见 _data/navigation.yml。
+title: "AnBoWork Blog"
 description: >-
-  AnBoWork 工作台官方博客：AI Agent 桌面工作台的使用教程、办公自动化技巧与功能更新，
-  帮你用自然语言完成对话、写作、资料整理与日常办公。
+  The official AnBoWork blog: guides to the desktop AI Agent workbench, native account sign-in,
+  session isolation and a stable network for AI accounts.
 url: "https://gyabevincent-debug.github.io"
 baseurl: ""
-lang: zh-CN
+lang: en
 
 author:
   name: "AnBoWork"
@@ -12,10 +13,8 @@ author:
 timezone: Asia/Shanghai
 permalink: /:year/:month/:day/:title/
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
+# feed.xml、zh/feed.xml、sitemap.xml 都是自己写的模板(要按语言拆分、带 hreflang),所以不启用 jekyll-feed / jekyll-sitemap / jekyll-seo-tag;
+# <head> 里的 SEO 标签在 _includes/head-seo.html。
 
 exclude:
   - Gemfile
@@ -31,7 +30,6 @@ defaults:
       type: posts
     values:
       layout: post
-      lang: zh
   - scope:
       path: ""
       type: pages
