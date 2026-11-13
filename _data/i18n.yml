@@ -29,6 +29,14 @@ en:
   date_format: "%B %-d, %Y"
   cta_title: Get started with AnBoWork
   cta_text: Download the desktop workbench and sign in with your own official account.
+  promo_title: AnBoWork
+  promo_tagline: Desktop AI Agent workbench
+  promo_points:
+    - "Native sign-in: your own Claude, Codex and Antigravity accounts"
+    - "Plan first: review and approve before the AI acts"
+    - "Layered long-term memory across chats and models"
+    - "Delivers Word, Excel, PPT, PDF, websites and code"
+    - "Optional dedicated network exit for AI requests"
   pager_label: Previous and next article
   prev: Previous
   next: Next
@@ -64,6 +72,14 @@ zh:
   date_format: "%Y-%m-%d"
   cta_title: 开始使用 AnBoWork
   cta_text: 下载桌面工作台，用你自己的官方账号登录即可使用。
+  promo_title: AnBoWork
+  promo_tagline: AI Agent 桌面工作台
+  promo_points:
+    - "原生账号登录：用你自己的 Claude、Codex、Antigravity 账号"
+    - "先出计划：你确认之后 AI 才动手"
+    - "分层长期记忆，跨对话、跨模型延续"
+    - "交付 Word、Excel、PPT、PDF、网站与代码项目"
+    - "可选的专属网络出口，稳定 AI 请求"
   pager_label: 上一篇和下一篇
   prev: 上一篇
   next: 下一篇

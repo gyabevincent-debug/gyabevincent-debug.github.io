@@ -55,9 +55,15 @@ layout: default
     </aside>
 
     <aside class="promo">
-      <img src="{{ '/assets/images/favicon.png' | relative_url }}" width="36" height="36" alt="">
-      <h2>{{ t.cta_title }}</h2>
-      <p>{{ t.cta_text }}</p>
+      <div class="promo__head">
+        <img src="{{ '/assets/images/favicon.png' | relative_url }}" width="36" height="36" alt="">
+        <div><h2>{{ t.promo_title }}</h2><p class="promo__tag">{{ t.promo_tagline }}</p></div>
+      </div>
+      <ul class="promo__points">
+        {%- for point in t.promo_points %}
+        <li>{{ point }}</li>
+        {%- endfor %}
+      </ul>
       <a class="btn btn--primary" href="{{ t.download_url }}">{{ t.download }}</a>
       <a class="promo__link" href="{{ t.official_url }}">{{ t.official }} &rarr;</a>
     </aside>
