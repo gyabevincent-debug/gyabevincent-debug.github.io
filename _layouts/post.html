@@ -48,8 +48,18 @@ layout: default
     </nav>
   </article>
 
-  <aside class="doc__toc" id="toc" aria-label="{{ t.toc }}">
-    <p class="side__label">{{ t.toc }}</p>
-    <ol></ol>
-  </aside>
+  <div class="doc__side">
+    <aside class="doc__toc" id="toc" aria-label="{{ t.toc }}">
+      <p class="side__label">{{ t.toc }}</p>
+      <ol></ol>
+    </aside>
+
+    <aside class="promo">
+      <img src="{{ '/assets/images/favicon.png' | relative_url }}" width="36" height="36" alt="">
+      <h2>{{ t.cta_title }}</h2>
+      <p>{{ t.cta_text }}</p>
+      <a class="btn btn--primary" href="{{ t.download_url }}">{{ t.download }}</a>
+      <a class="promo__link" href="{{ t.official_url }}">{{ t.official }} &rarr;</a>
+    </aside>
+  </div>
 </div>

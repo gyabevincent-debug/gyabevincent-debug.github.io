@@ -30,10 +30,17 @@
         {% endfor %}
       </nav>
 
-      <nav class="lang" aria-label="{{ t.switch_label }}">
-        <a href="{{ en_url | relative_url }}" lang="en" hreflang="en"{% if page.lang == 'en' %} aria-current="true"{% endif %}>English</a>
-        <a href="{{ zh_url | relative_url }}" lang="zh-CN" hreflang="zh-CN"{% if page.lang == 'zh' %} aria-current="true"{% endif %}>中文</a>
-      </nav>
+      <details class="lang">
+        <summary aria-label="{{ t.switch_label }}">
+          <svg class="lang__globe" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg>
+          <span class="lang__cur">{% if page.lang == 'zh' %}中文{% else %}English{% endif %}</span>
+          <svg class="lang__chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <nav class="lang__menu" aria-label="{{ t.switch_label }}">
+          <a href="{{ en_url | relative_url }}" lang="en" hreflang="en"{% if page.lang == 'en' %} aria-current="true"{% endif %}>English</a>
+          <a href="{{ zh_url | relative_url }}" lang="zh-CN" hreflang="zh-CN"{% if page.lang == 'zh' %} aria-current="true"{% endif %}>中文</a>
+        </nav>
+      </details>
 
       {% if all_cats.size > 0 %}
       <div class="side__group">
@@ -65,7 +72,12 @@
 
   <script>
   (function () {
-    var c = new URLSearchParams(location.search).get('c') || '';
+    var lang = document.querySelector('details.lang');
+    if (lang) {
+      document.addEventListener('click', function (e) { if (!lang.contains(e.target)) lang.removeAttribute('open'); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lang.removeAttribute('open'); });
+    }
+    var c =new URLSearchParams(location.search).get('c') || '';
     var rows = document.querySelectorAll('[data-cat]');
     rows.forEach(function (r) { r.hidden = !!c && r.dataset.cat.split('|').indexOf(c) < 0; });
     if (document.getElementById('list-title')) document.querySelectorAll('.cats a').forEach(function (a) { if ((a.dataset.c || '') === c) a.setAttribute('aria-current', 'true'); });

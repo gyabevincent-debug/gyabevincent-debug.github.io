@@ -17,15 +17,18 @@ layout: null
   </url>
 {%- endfor %}
 {%- for post in site.posts %}
-  {%- assign alts = site.posts | where: "ref", post.ref %}
-  {%- assign en_alt = alts | where: "lang", "en" | first %}
   <url>
     <loc>{{ post.url | absolute_url }}</loc>
     <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
+    {%- comment -%} 只有一种语言的文章没有 ref,不输出 hreflang {%- endcomment -%}
+    {%- if post.ref %}
+    {%- assign alts = site.posts | where: "ref", post.ref %}
+    {%- assign en_alt = alts | where: "lang", "en" | first %}
     {%- for a in alts %}
     <xhtml:link rel="alternate" hreflang="{{ site.data.i18n[a.lang].hreflang }}" href="{{ a.url | absolute_url }}"/>
     {%- endfor %}
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_alt.url | absolute_url }}"/>
+    {%- endif %}
   </url>
 {%- endfor %}
 </urlset>

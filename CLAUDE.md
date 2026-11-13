@@ -35,6 +35,7 @@ Jekyll 静态博客，托管于 GitHub Pages（`gyabevincent-debug.github.io`）
 - 中文文章要在 front matter 里写死 `permalink: /zh/YYYY/MM/DD/{slug}/`；英文文章用全局的 `/:year/:month/:day/:title/`。
 - 站内互链用 `{% post_url en/YYYY-MM-DD-slug %}` / `{% post_url zh/YYYY-MM-DD-slug %}`，只链同语言的文章。
 - 英文文章是按英文写法写的，不是逐句翻译；产品事实以官网为准，两个语言版本不能互相矛盾。
+- **英文文章单独选题、单独写**（2026-11-12 用户定）：新英文文章按英文读者关心的话题自己选，不必有中文对应篇，也不要从中文稿翻过来。只有一种语言的文章**不写 `ref`**（写了会生成指向不存在版本的 hreflang / 语言切换），语言切换会回到对方的首页。封面照样 `assets/images/covers/<slug>.webp`。生成封面时 `blog_covers` 脚本默认只扫 `_posts/*.md`，本仓库文章在 `_posts/en|zh/` 下，需要递归扫描。
 - 界面文案在 `_data/i18n.yml`，导航在 `_data/navigation.yml`，两个文件里的语言键（`en` / `zh`）要一一对应；不要在布局里写死某种语言的文字。
 - `feed.xml`（英文）、`zh/feed.xml`、`sitemap.xml` 是自己写的模板，所以没有启用 jekyll-feed / jekyll-sitemap / jekyll-seo-tag；`<head>` 里的标题、描述、canonical、hreflang、Open Graph 和结构化数据都在 `_includes/head-seo.html`。
 - 语言切换只是普通链接，没有按浏览器语言自动跳转（对搜索引擎和读者都更稳）。
